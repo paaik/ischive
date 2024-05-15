@@ -1,0 +1,18 @@
+<form method= POST>
+  <fieldset>
+    <legend> New Article</legend>
+    <textarea id= textarea name=article>&1t;p>Hello World.&1t;/p>
+      </textarea>
+      <div id=div style="white-space: prewrap" hidden><p>Helloworld.</p><\div>
+        <script>
+          let textarea = document.getElementById("textarea");
+          let div = document.getElementById("div");
+          textarea.hidden = true; 
+          div.hidden = false;
+          div.contentEditable = "true";
+          div.oninput = (e) => {
+            textarea.value = div.innerHTML;
+          };
+        </script>
+        <p> <button> Publish </button></p>
+  </fieldset>
